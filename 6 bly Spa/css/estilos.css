@@ -1,0 +1,561 @@
+/*Eliminar las margenes y padding  predeterminadas*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*Incluye padding y border al tamaño normal*/
+}
+
+body{
+    font-family: "Popins", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    overflow-x: hidden;/*Para evitar el scroll horizontal*/
+}
+
+.container{
+    width: 90%;/*Ancho del viewport*/
+    max-width: 1200px;
+    margin: 0 auto;/*Centrado horizontal*/
+    padding: 0 20px;
+}
+
+.logo{
+    font-size: 1.8rem;
+    font-weight: 700;/*Grosoe de la fuente*/
+    text-decoration: none;/*Eliminar el subrayado*/
+    color: #333;
+}
+
+.logo span{
+    color: mediumpurple;
+}
+
+/*Barra de navegacion*/
+
+.navbar{
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;/*Fija la barra en la parte superior*/
+    width: 100%;
+    top: 0;/*Alineacion arriba*/
+    z-index: 1000;/*Asegura que este por encima de otros elementos*/
+    transition: all 0.3s ease;
+}
+
+/*Para saber como se va comportar con el container*/
+.navbar .container{
+    display: flex;
+    justify-content: space-between;/*Espacio entre logo y enlaces*/
+    align-items: center;
+    height: 80px;
+
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;/*Elimina las biñetas*/
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: #333;
+    padding: 5px 7px;
+    margin: 0 5px;
+    font-weight: 500;/*Grosor de la fuente*/
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover{
+    color: mediumpurple;
+}
+
+/*Estilo del menu hamburguesa para el estilo mobile*/
+.hamburger{
+    display: none;/*Dejar oculto por defecto(solo se muestra en el mobile*/
+    cursor: pointer;/*Tipo de cursor*/
+}
+
+.hamburger span { 
+    display: block;/*Para cada linea funcione como un bloque*/
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/*Header paguina principal*/
+.hero{
+    height: 100vh;/*Altura completa del viewport*/
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url("/imagenes/fondo\ header.jpg") no-repeat center/cover;/*Degradado sobre la imangen de fondo*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 80px;/*Compensa la navbar fija*/
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 20px;
+}
+
+.hero-content h1 span{
+    color:mediumpurple;
+}
+
+.hero-content p{
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 1200px;
+}
+
+/*Botones*/
+.btn{
+    display: inline-block;/*Permite padding pero se comporta como un inline*/
+    background-color: mediumpurple;
+    color: #fff;
+    padding: 12px 30px;
+    border: 2px solid mediumpurple;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    background-color: mediumslateblue;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-outline{
+    display: inline-block;
+    border: 2px solid mediumpurple;/*Borde dorado*/
+    color: mediumpurple;
+    background-color: transparent;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+.btn-outline:hover{
+    background-color: mediumpurple;
+    color: #fff;
+}
+/*Secciones*/
+section{
+    padding: 80px 0;/*Espaciado vertical*/
+}
+
+.section-title{
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 50px;
+    position: relative;/*Posicionamiento para pseudo-elementos*/
+}
+
+.section-title span{
+    color: mediumpurple;
+}
+
+/*Seccion del menu o especialidades*/
+.specialities{
+    background-color: #fff;
+}
+
+.menu-grid{
+    display: grid;/*Para que use la cuadricula o la grilla*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));/*Columnas responsivas*/
+    gap: 30px; /*Espacio o brrevha estre elementos*/
+    margin-top: 50px;
+}
+
+.menu-item{
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;/*Oculta el contenido que sobresale*/
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);/*Sombra suave*/
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);/*Sombra mas pronunciada*/
+}
+
+.menu-item img{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;/*Ajuste de imagen sin deformar*/
+}
+
+.menu-item h3{
+    font-size: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 15px 20px 10px;
+}
+
+.menu-item p{
+    color: #666;
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+.price{
+    display: block;/*Mostrar elemento como bloque*/
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: mediumpurple;
+    padding: 0 20px 20px;
+}
+
+/*Espacio con su galeria*/
+.espacio{
+    background-color: #f5f5f5;
+}
+
+.espacio-galeria-cuadricula{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);/*4 columnas*/
+    grid-auto-rows: 200px;/*Altura automatica de filas*/
+    gap: 15px;
+}
+
+.esp-gal{
+    background-size: cover;/*Cubre todo el espacio*/
+    background-position: center;/*Centrar la imgen*/
+    background-repeat: no-repeat;/*No repite la imagen*/
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;/*Ocultar el contenido de sobresale*/
+    width: 100%;
+    height: 100%;
+}
+
+.esp-gal:hover{
+    transform: scale(1.03); /*Efecto de zoom*/
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.esp-gal.alta{
+    grid-row: span 2;/*Ocupe 2 filas*/
+}
+
+.esp-gal.ancha{
+    grid-column: span 2;/*Ocupe 2 filas*/
+}
+
+.esp-gal img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.esp-gal.alta img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.esp-gal.ancha img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+/*Reservas*/
+.reservations{
+    background-color: #fff;
+}
+
+.reservations .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;/*2 columnas iguales*/
+    gap: 50px;
+}
+
+.reservations-form h2{
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.reservations-form span{
+    color: mediumpurple;
+}
+
+.form-group{
+    margin-bottom: 20px;/*Margen inferior*/
+}
+
+.form-group input, 
+.form-group select,
+.form-group textarea{
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color: mediumpurple;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);/*Sombra dorada*/
+}
+
+.double{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group textarea{
+    min-height: 150px;
+    resize: vertical;/*Permite redimensionar verticalmente*/
+}
+
+.reservations-info{
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    height: fit-content;/*Se ajusta al contenido*/
+}
+
+.schedule li{
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.schedule span{
+    font-weight: 600;
+    color: #333;
+    display: inline-block;
+    width: 120px;
+}
+
+.contact-info{
+    margin-top: 30px;
+}
+
+.contact-info p{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i{
+    margin-right: 10px;
+    color: mediumpurple;
+    font-size: 1.1rem;
+}
+
+/*Footer pie de pagina*/
+.footer {
+    background-color: #222; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 80px 0 0; /* Padding superior */
+}
+
+.footer-content {
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 40px; /* Espacio entre columnas */
+    margin-bottom: 40px; /* Margen inferior */
+}
+
+.footer-section h3 {
+    font-size: 1.5rem; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Margen inferior */
+    color: mediumpurple; /* Color dorado */
+}
+
+.footer-section.about p {
+    margin-bottom: 20px; /* Margen inferior */
+    color: #bbb; /* Color gris claro */
+}
+
+.socials {
+    display: flex; /* Usa flexbox */
+}
+
+.socials a {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    width: 40px; /* Ancho fijo */
+    height: 40px; /* Altura fija */
+    background-color: #333; /* Fondo gris oscuro */
+    border-radius: 50%; /* Forma circular */
+    margin-right: 10px; /* Margen derecho */
+    color: #fff; /* Texto blanco */
+    text-decoration: none; /* Elimina subrayado */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.socials a:hover {
+    background-color: mediumpurple; /* Fondo dorado al pasar el mouse */
+    transform: translateY(-3px); /* Efecto de levantar */
+}
+
+.footer-section.links ul {
+    list-style: none; /* Elimina viñetas */
+}
+
+.footer-section.links li {
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.footer-section.links a {
+    color: #bbb; /* Color gris claro */
+    text-decoration: none; /* Elimina subrayado */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.footer-section.links a:hover {
+    color: mediumpurple; /* Color dorado al pasar el mouse */
+    padding-left: 5px; /* Desplazamiento a la derecha */
+}
+
+.footer-section.newsletter form {
+    display: flex; /* Usa flexbox */
+}
+
+.footer-section.newsletter input {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    padding: 10px 15px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 30px 0 0 30px; /* Bordes redondeados solo a la izquierda */
+    font-family: 'Poppins', sans-serif; /* Fuente */
+}
+
+.footer-section.newsletter button {
+    background-color: mediumpurple; /* Fondo dorado */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 0 30px 30px 0; /* Bordes redondeados solo a la derecha */
+    padding: 0 20px; /* Espaciado interno */
+    cursor: pointer; /* Cursor tipo pointer */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.footer-section.newsletter button:hover {
+    background-color: mediumslateblue; /* Color más oscuro al pasar el mouse */
+}
+
+.footer-bottom {
+    text-align: center; /* Centrado de texto */
+    padding: 20px 0; /* Espaciado interno */
+    background-color: #111; /* Fondo más oscuro */
+    color: #bbb; /* Color gris claro */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+.mensaje {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+.mensaje.success { 
+    background-color: #d4edda; color: #155724; 
+}
+.mensaje.error { 
+    background-color: #f8d7da; color: #721c24; 
+}
+
+/*Estilos condicionlaes para el diseño responsivo*/
+
+@media(max-width:992px){
+    .reservations .container{
+        grid-template-columns: 1fr;
+    }
+
+    .reservations-info{
+        margin-top: 40px;
+    }
+}
+
+@media(max-width:768px){
+    .nav-links {
+        position: fixed; /* Posición fija */
+        top: 80px; /* Debajo de la navbar */
+        left: -100%; /* Fuera de la pantalla */
+        width: 100%; /* Ancho completo */
+        height: calc(100vh - 80px); /* Altura restante */
+        background-color: #fff; /* Fondo blanco */
+        flex-direction: column; /* Organiza en columna */
+        align-items: center; /* Centrado horizontal */
+        justify-content: center; /* Centrado vertical */
+        transition: all 0.5s ease; /* Transición suave */
+    }
+    
+    .nav-links.active {
+        left: 0; /* Visible */
+    }
+    
+    .nav-links li {
+        margin: 20px 0; /* Margen vertical */
+    }
+    
+    .hamburger {
+        display: block; /* Muestra el menú hamburguesa */
+    }
+    
+    .hamburger .active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); /* Transformación para X */
+    }
+    
+    .hamburger .active span:nth-child(2) {
+        opacity: 0; /* Oculta la línea del medio */
+    }
+    
+    .hamburger .active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px); /* Transformación para X */
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem; /* Tamaño de fuente más pequeño */
+    }
+    
+    .section-title {
+        font-size: 2rem; /* Tamaño de fuente más pequeño */
+    }
+    
+    .espacio-galeria-cuadricula {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles pequeños */
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles pequeños */
+    }
+    
+    .form-group.double {
+        grid-template-columns: 1fr; /* 1 columna en móviles pequeños */
+    }
+}
